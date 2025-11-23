@@ -10,15 +10,19 @@ const { data: page } = await useAsyncData(route.path, () => {
 useSeoMeta({
   title: page.value?.title,
   description: page.value?.description,
+  ogTitle: page.value?.title,
+  ogDescription: page.value?.description,
 });
 </script>
 
 <template>
-  <ContentRenderer
-    v-if="page"
-    :value="page"
-  />
-  <div v-else>
-    Page not found
-  </div>
+  <UPageSection>
+    <ContentRenderer
+      v-if="page"
+      :value="page"
+    />
+    <div v-else>
+      Page not found
+    </div>
+  </UPageSection>
 </template>

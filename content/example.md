@@ -1,3 +1,8 @@
+---
+title: 'Example page'
+description: 'Example page with different UI elements'
+---
+
 # Markdown demo page
 
 Welcome to this demo page. It showcases **many Markdown features** you can use in your Nuxt Content project.
