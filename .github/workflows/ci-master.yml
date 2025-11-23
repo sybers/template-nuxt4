@@ -22,7 +22,7 @@ jobs:
         run: bun install --frozen-lockfile
 
       - name: Run lint
-        run: bunx eslint .
+        run: bun lint
 
   test:
     runs-on: ubuntu-latest
@@ -42,20 +42,3 @@ jobs:
 
       - name: Run tests
         run: bun test
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: [lint, test]
-
-    steps:
-      - name: Trigger Render production deploy
-        env:
-          RENDER_DEPLOY_HOOK_URL_PRODUCTION: ${{ secrets.RENDER_DEPLOY_HOOK_URL_PRODUCTION }}
-        run: |
-          if [ -z "$RENDER_DEPLOY_HOOK_URL_PRODUCTION" ]; then
-            echo "Missing secret: RENDER_DEPLOY_HOOK_URL_PRODUCTION"
-            exit 1
-          fi
-          curl -X POST "$RENDER_DEPLOY_HOOK_URL_PRODUCTION"
-
-

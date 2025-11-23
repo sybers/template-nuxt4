@@ -51,3 +51,7 @@ Set *Start Command* to:
 ```bash
 bun .output/server/index.mjs
 ```
+
+Set *Auto Deploy* to *After CI Checks Pass*.
+
+(optional) Set *Pull Request Previews* to *Automatic* to enable preview environments for PRs targetting the `main` branch.
