@@ -33,3 +33,21 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Setup on Render.com
+
+Create a new *Web Service*.
+
+Set Language to *Node*.
+
+Set *Build Command* to:
+
+```bash
+bun install --frozen-lockfile && bun run build
+```
+
+Set *Start Command* to:
+
+```bash
+bun .output/server/index.mjs
+```
