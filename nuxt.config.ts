@@ -9,6 +9,9 @@ export default defineNuxtConfig({
     '@nuxt/test-utils',
     '@nuxt/hints',
   ],
+  imports: {
+    autoImport: false,
+  },
   devtools: { enabled: true },
   compatibilityDate: '2025-07-15',
   nitro: {
