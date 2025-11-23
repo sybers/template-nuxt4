@@ -1,0 +1,24 @@
+<script setup lang="ts">
+import { useAsyncData, useRoute, useSeoMeta } from '#app';
+import { queryCollection } from '../../.nuxt/imports';
+
+const route = useRoute();
+const { data: page } = await useAsyncData(route.path, () => {
+  return queryCollection('content').path(route.path).first();
+});
+
+useSeoMeta({
+  title: page.value?.title,
+  description: page.value?.description,
+});
+</script>
+
+<template>
+  <ContentRenderer
+    v-if="page"
+    :value="page"
+  />
+  <div v-else>
+    Page not found
+  </div>
+</template>
