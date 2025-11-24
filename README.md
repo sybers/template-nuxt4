@@ -15,7 +15,7 @@ bun install
 Start the development server on `http://localhost:3000`:
 
 ```bash
-bun run dev
+bun --bun run dev
 ```
 
 ## Production
@@ -23,13 +23,13 @@ bun run dev
 Build the application for production:
 
 ```bash
-bun run build
+bun --bun run build
 ```
 
 Locally preview production build:
 
 ```bash
-bun run preview
+bun --bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
@@ -43,13 +43,13 @@ Set Language to *Node*.
 Set *Build Command* to:
 
 ```bash
-bun install --frozen-lockfile && bun run build
+bun install --frozen-lockfile && bun --bun run build
 ```
 
 Set *Start Command* to:
 
 ```bash
-bun .output/server/index.mjs
+bun --bun .output/server/index.mjs
 ```
 
 Set *Auto Deploy* to *After CI Checks Pass*.
