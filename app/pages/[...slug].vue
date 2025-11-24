@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { useAsyncData, useRoute, useSeoMeta } from '#app';
-import { queryCollection } from '../../.nuxt/imports';
+import { useAsyncData, useRoute, useSeoMeta, queryCollection } from '#imports';
 
 const route = useRoute();
 const { data: page } = await useAsyncData(route.path, () => {
